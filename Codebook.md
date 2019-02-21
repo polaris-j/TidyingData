@@ -37,6 +37,6 @@ Columns names in sensorsData are cleaned up, removing special characters like '-
 
 ## 5. Independent Tidy Data Set
 The average of each variable for each activity and each subject is done via the function ddplyr() calling the function numcolwise(mean).
-The tidy data is named ' sensorTidyData.txt'.
+The tidy data is named 'sensorTidyData.txt'.
 
 
