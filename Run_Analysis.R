@@ -82,9 +82,4 @@ names(sensorsData) <- gsub("std", "StandardDeviation", names(sensorsData))
 #     with the average of each variable for each activity and each subject.
 
 sensorAvg <- ddply(sensorsData, c("subject", "activityLabel"), numcolwise(mean))
-<<<<<<< HEAD
 write.table(sensorAvg, file="sensorTidyData.txt", row.name=FALSE)
-=======
-write.table(sensorAvg, file="sensor_tidy_data.txt", row.name=FALSE)
->>>>>>> 99abb507a8e48a73ddf43fd4dc9e5a7c1b2fe24a
-
