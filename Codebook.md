@@ -1,4 +1,4 @@
-CodeBook 
+# CodeBook 
 This CodeBook describes the variables, the data, and any transformations or work  performed to clean up the data.
 
 #	The Data
@@ -23,19 +23,19 @@ run_analysis.R does the following:
 4.	Appropriately labels the data set with descriptive variable names.
 5.	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-1. Merges training and test data
+## 1. Merges training and test data
 Test data in cbind(subjectTestDt, activityTestDt,   featuresTestDt) and training data in cbind(subjectTrainDt,  activityTrainDt,  featuresTrainDt) are merge together with rbind(), creating a dataset called sensorsData. The columns are renamed "subject", "activityId", and labels from features.
 
-2. Extracts only mean and std measurements
+## 2. Extracts only mean and std measurements
 A vector columnsToKeep is created that uses grepl() to find the columns that have features with "subject" or "activityId" or "mean" or "std" in the name. These columns are isolated in now overwritten dataset sensorsData.
 
-3. Use descriptive activity names
+## 3. Use descriptive activity names
 A column named activity is populated into the dataset sensorsData by joining both dataset sensorsData and dataset activities based on common field activityId.
 
-4. Label the data set with descriptive variable names
+## 4. Label the data set with descriptive variable names
 Columns names in sensorsData are cleaned up, removing special characters like '-'.  The columns are renamed with more descriptive names using the function gsub().
 
-5. Independent Tidy Data Set
+## 5. Independent Tidy Data Set
 The average of each variable for each activity and each subject is done via the function ddplyr() calling the function numcolwise(mean).
 The tidy data is named ' sensorTidyData.txt'.
 
